@@ -4,9 +4,6 @@ import {
   ArrowRight, 
   FileText, 
   Sparkles, 
-  Brain, 
-  Terminal, 
-  ShieldCheck, 
   MapPin, 
   CheckCircle2,
   Mail
@@ -126,7 +123,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             </div>
           </motion.div>
 
-          {/* Right Column: Profile Image with Floating Elements */}
+          {/* Right Column: Profile Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -152,54 +149,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
                 </div>
               </div>
-
-              {/* Floating Badge 1: AI / ML */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="absolute -top-1 -left-2 sm:-left-6 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-blue-500/30 hover:border-blue-400 transition-all hover:scale-105"
-              >
-                <div className="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center border border-blue-500/30">
-                  <Brain className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Domain</span>
-                  <span className="text-xs font-bold text-white font-mono">AI / ML</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 2: Security */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-emerald-500/30 hover:border-emerald-400 transition-all hover:scale-105"
-              >
-                <div className="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Role</span>
-                  <span className="text-xs font-bold text-white font-mono">Security</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 3: Python */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute -bottom-2 left-6 sm:left-8 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-cyan-500/30 hover:border-cyan-400 transition-all hover:scale-105"
-              >
-                <div className="w-7 h-7 rounded-lg bg-cyan-600/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
-                  <Terminal className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Core</span>
-                  <span className="text-xs font-bold text-white font-mono">Python</span>
-                </div>
-              </motion.div>
 
             </div>
           </motion.div>
