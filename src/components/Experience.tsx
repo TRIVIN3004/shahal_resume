@@ -8,7 +8,8 @@ import {
   Layers, 
   Code2, 
   CheckCircle2, 
-  Building2
+  Building2,
+  ShieldAlert
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolio';
 
@@ -17,18 +18,20 @@ export const Experience: React.FC = () => {
 
   const getRoleIcon = (index: number) => {
     switch (index) {
-      case 0: return Bot;
-      case 1: return Layers;
-      case 2: return Code2;
+      case 0: return ShieldAlert;
+      case 1: return Bot;
+      case 2: return Layers;
+      case 3: return Code2;
       default: return Briefcase;
     }
   };
 
   const getRoleBadgeColor = (index: number) => {
     switch (index) {
-      case 0: return "bg-blue-950 text-blue-400 border-blue-800/60";
-      case 1: return "bg-purple-950 text-purple-400 border-purple-800/60";
-      case 2: return "bg-cyan-950 text-cyan-400 border-cyan-800/60";
+      case 0: return "bg-emerald-950/80 text-emerald-400 border-emerald-800/60";
+      case 1: return "bg-blue-950/80 text-blue-400 border-blue-800/60";
+      case 2: return "bg-purple-950/80 text-purple-400 border-purple-800/60";
+      case 3: return "bg-cyan-950/80 text-cyan-400 border-cyan-800/60";
       default: return "bg-slate-900 text-slate-300 border-slate-700";
     }
   };
@@ -47,23 +50,24 @@ export const Experience: React.FC = () => {
         <div className="flex flex-col items-start mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-950/50 border border-blue-800/40 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-3">
             <Briefcase className="w-3.5 h-3.5 text-blue-400" />
-            <span>Practical Industry Exposure</span>
+            <span>Career & Industry Experience</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Internship Experience
+            Professional Experience
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
-            Hands-on technical contributions across robotics automation, UI/UX architecture, and Python web application development.
+            Hands-on technical contributions across security software solutions, robotics automation, UI/UX architecture, and Python web development.
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3" />
         </div>
 
         {/* Vertical Timeline */}
-        <div className="relative pl-6 sm:pl-10 before:absolute before:left-2 sm:before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-indigo-500 before:to-purple-500">
+        <div className="relative pl-6 sm:pl-10 before:absolute before:left-2 sm:before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-emerald-500 before:via-blue-500 before:to-purple-500">
           
           {experience.map((exp, idx) => {
             const Icon = getRoleIcon(idx);
             const badgeColor = getRoleBadgeColor(idx);
+            const isCurrentRole = idx === 0;
 
             return (
               <motion.div
@@ -71,21 +75,21 @@ export const Experience: React.FC = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                transition={{ duration: 0.5, delay: idx * 0.12 }}
                 className="relative mb-12 last:mb-0 group"
               >
                 {/* Timeline Dot with Glow */}
-                <div className="absolute -left-[30px] sm:-left-[46px] top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-900 border-2 border-blue-500 shadow-md shadow-blue-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                <div className={`absolute -left-[30px] sm:-left-[46px] top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-900 border-2 ${isCurrentRole ? 'border-emerald-400 shadow-emerald-500/40' : 'border-blue-500 shadow-blue-500/30'} shadow-md flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <div className={`w-2 h-2 rounded-full ${isCurrentRole ? 'bg-emerald-400 animate-pulse' : 'bg-cyan-400'}`} />
                 </div>
 
                 {/* Experience Card */}
-                <div className="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 group-hover:border-slate-700 transition-all shadow-xl">
+                <div className={`glass-card p-6 sm:p-8 rounded-2xl border ${isCurrentRole ? 'border-emerald-500/40 shadow-emerald-500/5' : 'border-slate-800'} group-hover:border-slate-700 transition-all shadow-xl`}>
                   
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-800/80">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <div className="p-1.5 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <div className={`p-1.5 rounded-md ${isCurrentRole ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'}`}>
                           <Icon className="w-4 h-4" />
                         </div>
                         <h3 className="text-lg sm:text-xl font-bold text-white font-heading">

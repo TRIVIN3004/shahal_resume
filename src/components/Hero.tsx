@@ -6,7 +6,7 @@ import {
   Sparkles, 
   Brain, 
   Terminal, 
-  Cpu, 
+  ShieldCheck, 
   MapPin, 
   CheckCircle2,
   Mail
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700/80 hover:border-slate-600 shadow-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <FileText className="w-4 h-4 text-blue-400" />
-                <span>Download Resume</span>
+                <span>View & Download CV</span>
               </button>
 
               <a
@@ -108,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 border-t border-slate-800/80 pt-5 w-full">
               <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Open for AI/ML Internships & Roles</span>
+                <span>Associate Security Engineer @ Techard Solutions</span>
               </div>
               <span className="text-slate-600">•</span>
               <div className="flex items-center gap-1.5">
@@ -164,40 +164,40 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   <Brain className="w-4 h-4" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Focus</span>
+                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Domain</span>
                   <span className="text-xs font-bold text-white font-mono">AI / ML</span>
                 </div>
               </motion.div>
 
-              {/* Floating Badge 2: Python */}
+              {/* Floating Badge 2: Security */}
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-cyan-500/30 hover:border-cyan-400 transition-all hover:scale-105"
+                className="absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-emerald-500/30 hover:border-emerald-400 transition-all hover:scale-105"
+              >
+                <div className="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Role</span>
+                  <span className="text-xs font-bold text-white font-mono">Security</span>
+                </div>
+              </motion.div>
+
+              {/* Floating Badge 3: Python */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="absolute -bottom-2 left-6 sm:left-8 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-cyan-500/30 hover:border-cyan-400 transition-all hover:scale-105"
               >
                 <div className="w-7 h-7 rounded-lg bg-cyan-600/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
                   <Terminal className="w-4 h-4" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Stack</span>
+                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Core</span>
                   <span className="text-xs font-bold text-white font-mono">Python</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 3: Problem Solver */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute -bottom-2 left-6 sm:left-8 glass-panel px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 border border-purple-500/30 hover:border-purple-400 transition-all hover:scale-105"
-              >
-                <div className="w-7 h-7 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center border border-purple-500/30">
-                  <Cpu className="w-4 h-4" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Mindset</span>
-                  <span className="text-xs font-bold text-white">Problem Solver</span>
                 </div>
               </motion.div>
 

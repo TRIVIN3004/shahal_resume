@@ -10,7 +10,9 @@ import {
   Briefcase, 
   Award, 
   Cpu, 
-  CheckCircle2 
+  CheckCircle2,
+  Download,
+  Languages
 } from 'lucide-react';
 import { LinkedinIcon } from './Icons';
 import { PORTFOLIO_DATA } from '../data/portfolio';
@@ -21,7 +23,7 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
-  const { personal, education, experience, research, certifications } = PORTFOLIO_DATA;
+  const { personal, skills, education, experience, research, certifications } = PORTFOLIO_DATA;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -68,13 +70,22 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </span>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
+            <a
+              href="/shahal_resume.pdf"
+              download="Najeeb_Shahal_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save as PDF</span>
+              <span>Print / Save PDF</span>
             </button>
 
             <button
@@ -88,15 +99,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Formatted Resume Body */}
-        <div className="p-6 sm:p-10 overflow-y-auto space-y-8 bg-slate-950 text-slate-200 print:bg-white print:text-black print:p-0">
+        <div className="p-6 sm:p-10 overflow-y-auto space-y-7 bg-slate-950 text-slate-200 print:bg-white print:text-black print:p-0">
           
           {/* Header */}
-          <div className="border-b border-slate-800 pb-6">
+          <div className="border-b border-slate-800 pb-5">
             <h1 className="text-3xl font-extrabold text-white font-heading">
               {personal.name}
             </h1>
             <p className="text-sm font-semibold text-blue-400 mt-1 font-mono">
-              B.Sc Artificial Intelligence & Machine Learning Student | AI/ML & Python Developer
+              Associate Security Engineer | AI & ML Developer | Python Developer
             </p>
 
             <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-slate-400 mt-3.5">
@@ -132,13 +143,39 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </p>
           </div>
 
+          {/* Professional Experience */}
+          <div>
+            <h2 className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3 font-mono flex items-center gap-2">
+              <Briefcase className="w-3.5 h-3.5 text-purple-400" />
+              <span>Professional Experience</span>
+            </h2>
+            <div className="space-y-4">
+              {experience.map((exp) => (
+                <div key={exp.id} className="border-l-2 border-slate-800 pl-4 space-y-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <div className="font-bold text-white text-sm">
+                      {exp.role} — <span className="text-blue-400 font-medium">{exp.company}</span>
+                      <span className="text-xs text-slate-400 font-normal ml-2">({exp.location})</span>
+                    </div>
+                    <div className="text-xs font-mono text-slate-400">{exp.period}</div>
+                  </div>
+                  <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
+                    {exp.description.map((d, i) => (
+                      <li key={i}>{d}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Education */}
           <div>
             <h2 className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3 font-mono flex items-center gap-2">
               <GraduationCap className="w-3.5 h-3.5 text-indigo-400" />
               <span>Education</span>
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {education.map((edu) => (
                 <div key={edu.id} className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 text-xs sm:text-sm">
                   <div>
@@ -166,8 +203,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="text-slate-300">Python, C++</span>
               </div>
               <div className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">
-                <span className="font-bold text-white block mb-1">Data & AI Stack:</span>
-                <span className="text-slate-300">Machine Learning, AI, NLP, Pandas, Scikit-learn, Matplotlib, NLTK</span>
+                <span className="font-bold text-white block mb-1">AI / Machine Learning:</span>
+                <span className="text-slate-300">Artificial Intelligence, Machine Learning, NLP, Scikit-learn, Pandas, NLTK, Matplotlib</span>
               </div>
               <div className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">
                 <span className="font-bold text-white block mb-1">Databases & Tools:</span>
@@ -180,37 +217,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
-          {/* Internship Experience */}
-          <div>
-            <h2 className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3 font-mono flex items-center gap-2">
-              <Briefcase className="w-3.5 h-3.5 text-purple-400" />
-              <span>Internship Experience</span>
-            </h2>
-            <div className="space-y-4">
-              {experience.map((exp) => (
-                <div key={exp.id} className="border-l-2 border-slate-800 pl-4 space-y-1.5">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <div className="font-bold text-white text-sm">{exp.role} — <span className="text-blue-400 font-medium">{exp.company}</span></div>
-                    <div className="text-xs font-mono text-slate-400">{exp.period}</div>
-                  </div>
-                  <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                    {exp.description.map((d, i) => (
-                      <li key={i}>{d}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Research & Publications */}
+          {/* Journal Publication */}
           <div>
             <h2 className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2 font-mono flex items-center gap-2">
               <Award className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Research Proposal</span>
+              <span>Journal Publication</span>
             </h2>
-            <div className="bg-slate-900/50 p-3.5 rounded-lg border border-slate-800 text-xs">
-              <div className="font-bold text-white mb-1">"{research.title}"</div>
+            <div className="bg-slate-900/50 p-3.5 rounded-lg border border-slate-800 text-xs space-y-1.5">
+              <div className="font-bold text-white">"{research.title}"</div>
+              <div className="text-blue-400 font-mono text-[11px]">{research.journal} — {research.citation}</div>
               <p className="text-slate-300">{research.description}</p>
             </div>
           </div>
@@ -231,12 +246,27 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
+          {/* Languages */}
+          <div>
+            <h2 className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2 font-mono flex items-center gap-2">
+              <Languages className="w-3.5 h-3.5 text-amber-400" />
+              <span>Languages</span>
+            </h2>
+            <div className="flex flex-wrap gap-2 text-xs">
+              {skills.languages.map((lang) => (
+                <span key={lang.name} className="px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-200 font-medium">
+                  {lang.name} <span className="text-slate-400 text-[11px]">({lang.level})</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         {/* Footer */}
         <div className="p-4 border-t border-slate-800 bg-slate-900/90 flex items-center justify-between">
           <span className="text-xs text-slate-400">
-            Verified resume details for Najeeb Shahal S.
+            Updated verified CV for Najeeb Shahal S.
           </span>
           <button
             onClick={onClose}

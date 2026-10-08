@@ -49,24 +49,26 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Najeeb Shahal S",
     shortName: "NS",
-    tagline: "AI & MACHINE LEARNING DEVELOPER",
+    tagline: "AI & ML DEVELOPER | ASSOCIATE SECURITY ENGINEER",
     heroHeading: "Hi, I'm Najeeb Shahal S.",
-    heroSubheading: "I build intelligent solutions with AI, Machine Learning and Python.",
-    shortBio: "Motivated B.Sc Artificial Intelligence & Machine Learning student with hands-on experience in AI, Machine Learning and Python development through internships and academic projects.",
-    aboutIntro: "I am a B.Sc Artificial Intelligence & Machine Learning student passionate about building practical AI-powered solutions. I enjoy working with Python, machine learning, data analysis and software development. Through internships and academic projects, I have gained hands-on exposure to AI/ML, web development, robotics, UI/UX and IoT-based systems.",
+    heroSubheading: "AI/ML Professional, Security Engineer & Python Developer",
+    shortBio: "Artificial Intelligence and Machine Learning professional with hands-on experience across cybersecurity, Python development, machine learning, robotics, web development and UI/UX.",
+    aboutIntro: "I am an Artificial Intelligence and Machine Learning professional with hands-on experience across cybersecurity, Python development, machine learning, robotics, web development and UI/UX. Experienced in developing academic AI/ML solutions, working with data preprocessing and model development, and contributing to technology-driven product environments. Strong interest in practical software engineering, problem solving, security-oriented systems and emerging AI technologies.",
     phone: "+91 9843019801",
     email: "najeebshahal07@gmail.com",
     location: "Coimbatore, Tamil Nadu, India",
     linkedin: "https://www.linkedin.com/in/najeebshahal07",
+    resumeUrl: "/shahal_resume.pdf",
+    languages: ["English", "Tamil", "Malayalam"],
     roles: [
-      "B.Sc Artificial Intelligence & Machine Learning Student",
-      "AI/ML Developer",
+      "Associate Security Engineer",
+      "AI & Machine Learning Developer",
       "Python Developer"
     ],
     floatingBadges: [
       { text: "AI / ML", icon: "Brain" },
-      { text: "Python", icon: "Code2" },
-      { text: "Problem Solver", icon: "Cpu" }
+      { text: "Security Eng", icon: "Shield" },
+      { text: "Python", icon: "Code2" }
     ]
   },
 
@@ -82,10 +84,10 @@ export const PORTFOLIO_DATA = {
       { name: "Machine Learning", highlight: true, icon: "Cpu" },
       { name: "Artificial Intelligence", highlight: true, icon: "Brain" },
       { name: "NLP", highlight: true, icon: "FileText" },
-      { name: "Pandas", highlight: true, icon: "Layers" },
       { name: "Scikit-learn", highlight: true, icon: "Network" },
-      { name: "Matplotlib", highlight: false, icon: "BarChart3" },
-      { name: "NLTK", highlight: true, icon: "BookOpen" }
+      { name: "Pandas", highlight: true, icon: "Layers" },
+      { name: "NLTK", highlight: true, icon: "BookOpen" },
+      { name: "Matplotlib", highlight: false, icon: "BarChart3" }
     ],
     otherTools: [
       { name: "MS Word", icon: "FileCode" },
@@ -96,15 +98,20 @@ export const PORTFOLIO_DATA = {
       { name: "Teamwork", desc: "Collaborative project delivery and cross-functional coordination" },
       { name: "Communication", desc: "Clear technical and presentation skills" },
       { name: "Adaptability", desc: "Rapid adoption of emerging tech stacks and methodologies" }
+    ],
+    languages: [
+      { name: "English", level: "Professional" },
+      { name: "Tamil", level: "Native / Fluent" },
+      { name: "Malayalam", level: "Fluent" }
     ]
   },
 
   projects: [
     {
       id: "sleep-health-prediction",
-      title: "Sleep Health & Lifestyle Prediction",
+      title: "Sleep Health & Lifestyle Prediction Using Machine Learning",
       category: "Machine Learning & Healthcare",
-      description: "Developed a machine learning model to predict sleep quality using lifestyle factors such as BMI, stress level and physical activity.",
+      description: "Developed a machine learning model to predict sleep quality using lifestyle factors including BMI, stress level and physical activity.",
       highlights: [
         "Data preprocessing",
         "Feature selection",
@@ -139,7 +146,7 @@ export const PORTFOLIO_DATA = {
       id: "electricity-anomaly-detection",
       title: "Intelligent Abnormal Electricity Usage Detection System",
       category: "AI & Anomaly Detection",
-      description: "Built an AI/ML-based system to identify abnormal electricity consumption patterns and unusual spikes.",
+      description: "Built an AI/ML-based system to identify abnormal electricity consumption patterns and unusual usage spikes.",
       highlights: [
         "Electricity usage analysis",
         "Anomaly detection",
@@ -162,7 +169,7 @@ export const PORTFOLIO_DATA = {
       ],
       results: [
         "Successful identification of outlier consumption spikes differing from standard usage cycles.",
-        "Established structured energy pattern intelligence suitable for smart power monitoring."
+        "Applied preprocessing and pattern analysis techniques to support energy monitoring and reduce electricity wastage."
       ],
       futureImprovements: [
         "Integration with IoT smart meter telemetry for real-time live inferencing.",
@@ -173,7 +180,7 @@ export const PORTFOLIO_DATA = {
       id: "nlp-text-summarization",
       title: "Text Summarization with Python",
       category: "Natural Language Processing",
-      description: "Developed a text summarization tool using Natural Language Processing techniques.",
+      description: "Developed an NLP-based text summarization tool using preprocessing, tokenization and keyword extraction techniques with NLTK.",
       highlights: [
         "Text preprocessing",
         "Tokenization",
@@ -207,36 +214,46 @@ export const PORTFOLIO_DATA = {
   experience: [
     {
       id: "exp-1",
+      role: "Associate Security Engineer",
+      company: "Techard Solutions",
+      location: "Bengaluru",
+      period: "2026 – Present",
+      description: [
+        "Contributing to the development and testing of security-focused software products and technology solutions.",
+        "Working with product and engineering teams to understand requirements, develop solutions and support product implementation."
+      ],
+      tags: ["Security Engineering", "Software Products", "Testing", "Product Implementation", "Cybersecurity"]
+    },
+    {
+      id: "exp-2",
       role: "Robotics Intern",
       company: "Emglitz Technologies",
       location: "Coimbatore",
       period: "Dec 2024 – Jan 2025",
       description: [
-        "Worked on basic robotics concepts and automation systems.",
-        "Assisted in sensor integration and hardware-software interaction.",
-        "Gained practical exposure to IoT-based robotic applications and problem-solving."
+        "Developed practical problem-solving skills through robotics and automation activities.",
+        "Assisted in sensor integration and hardware-software interaction for IoT-based systems."
       ],
       tags: ["Robotics", "Automation", "IoT", "Sensor Integration", "Hardware/Software"]
     },
     {
-      id: "exp-2",
+      id: "exp-3",
       role: "UI/UX Development Intern",
       company: "Magora Info Tech",
       location: "Coimbatore",
-      period: "May 2024 – June 2024",
+      period: "May 2024 – Jun 2024",
       description: [
-        "Designed user-friendly interfaces and wireframes for web applications.",
-        "Learned fundamentals of user experience design and responsive layouts.",
+        "Designed user-friendly interfaces and wireframes for web applications with focus on usability and responsive layouts.",
         "Collaborated on improving usability and interface structure."
       ],
       tags: ["UI/UX", "Wireframing", "Responsive Design", "Usability", "Interface Architecture"]
     },
     {
-      id: "exp-3",
+      id: "exp-4",
       role: "Web Development Using Python Intern",
       company: "Nexus Global Solutions",
       location: "Coimbatore",
-      period: "May 2024 – June 2024",
+      period: "May 2024 – Jun 2024",
       description: [
         "Developed basic web applications using Python and web technologies.",
         "Worked on front-end and back-end concepts with database connectivity.",
@@ -248,9 +265,11 @@ export const PORTFOLIO_DATA = {
 
   research: {
     title: "Automatic Autopilot Activation During Pilot G-Force Unconsciousness",
-    description: "Proposed an automated aviation safety system to activate autopilot during pilot unconsciousness caused by extreme G-force.",
+    journal: "International Journal of Research Publication and Reviews (IJRPR)",
+    citation: "Volume 7, Issue 4 | Apr 2026",
+    description: "Proposed an automated aviation safety system designed to activate autopilot during pilot unconsciousness caused by extreme G-force.",
     domain: "Aviation Safety & Autonomous Systems",
-    tags: ["Research", "AI", "Automation", "Aviation Safety"],
+    tags: ["Journal Publication", "IJRPR 2026", "AI", "Automation", "Aviation Safety"],
     details: {
       motivation: "High-performance maneuvers can subject pilots to acute G-induced Loss of Consciousness (G-LOC), presenting critical flight hazards.",
       concept: "Conceptualized an intelligent bio-telemetry and flight dynamics monitoring system that continuously evaluates pilot responsiveness and aircraft spatial trajectory.",
@@ -307,7 +326,7 @@ export const PORTFOLIO_DATA = {
   education: [
     {
       id: "edu-1",
-      degree: "B.Sc Artificial Intelligence & Machine Learning",
+      degree: "B.Sc. Artificial Intelligence & Machine Learning",
       institution: "Sri Krishna Adithya College of Arts and Science",
       location: "Coimbatore",
       period: "2023 – 2026",
